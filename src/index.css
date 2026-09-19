@@ -1,0 +1,172 @@
+/* ── Reset & base ─────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  min-height: 100vh;
+}
+
+/* ── Layout ─────────────────────────────────────────────────────── */
+.app {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* ── Header ─────────────────────────────────────────────────────── */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+.app-header h1 { font-size: 1.8rem; }
+.subtitle { color: #94a3b8; font-size: .85rem; margin-top: .25rem; }
+.subtitle code {
+  background: #1e293b;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: .8rem;
+  color: #818cf8;
+}
+
+/* ── Stats bar ──────────────────────────────────────────────────── */
+.stats-bar {
+  display: flex;
+  gap: 1.5rem;
+  background: #1e293b;
+  border-radius: 10px;
+  padding: .75rem 1.25rem;
+  margin-bottom: 1.5rem;
+  font-size: .875rem;
+  color: #94a3b8;
+}
+.stats-bar strong { color: #e2e8f0; }
+
+/* ── Buttons ─────────────────────────────────────────────────────── */
+.btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: .55rem 1.1rem;
+  font-size: .875rem;
+  font-weight: 600;
+  transition: opacity .15s, transform .1s;
+}
+.btn:hover  { opacity: .88; }
+.btn:active { transform: scale(.97); }
+
+.btn-primary { background: #6366f1; color: #fff; }
+.btn-ghost   { background: #1e293b; color: #94a3b8; }
+.btn-edit    { background: #0ea5e9; color: #fff; }
+.btn-danger  { background: #ef4444; color: #fff; }
+.btn-sm      { padding: .35rem .75rem; font-size: .8rem; }
+
+/* ── Form overlay ───────────────────────────────────────────────── */
+.form-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+/* ── Form card ──────────────────────────────────────────────────── */
+.user-form {
+  background: #1e293b;
+  border-radius: 14px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 25px 60px rgba(0,0,0,.5);
+}
+.user-form h2 { margin-bottom: 1.25rem; font-size: 1.2rem; }
+
+.field { margin-bottom: 1rem; }
+.field label {
+  display: block;
+  font-size: .8rem;
+  color: #94a3b8;
+  margin-bottom: .35rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+.field input,
+.field select {
+  width: 100%;
+  background: #0f172a;
+  border: 1px solid #334155;
+  color: #e2e8f0;
+  border-radius: 8px;
+  padding: .6rem .85rem;
+  font-size: .9rem;
+  outline: none;
+  transition: border-color .2s;
+}
+.field input:focus,
+.field select:focus { border-color: #6366f1; }
+.field select option { background: #1e293b; }
+
+.error { color: #f87171; font-size: .78rem; margin-top: .3rem; display: block; }
+
+.form-actions { display: flex; gap: .75rem; margin-top: 1.5rem; }
+.form-actions .btn { flex: 1; }
+
+/* ── Table ──────────────────────────────────────────────────────── */
+.table-wrapper { overflow-x: auto; border-radius: 12px; }
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #1e293b;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.user-table th {
+  text-align: left;
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: #64748b;
+  padding: .85rem 1rem;
+  background: #0f172a;
+}
+
+.user-table td {
+  padding: .85rem 1rem;
+  border-top: 1px solid #0f172a;
+  font-size: .875rem;
+}
+
+.user-table tr:hover td { background: #263348; }
+
+.name-cell { font-weight: 600; color: #f1f5f9; }
+
+/* ── Role badge ─────────────────────────────────────────────────── */
+.badge {
+  display: inline-block;
+  padding: .2rem .65rem;
+  border-radius: 999px;
+  font-size: .75rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: .04em;
+}
+
+/* ── Actions column ─────────────────────────────────────────────── */
+.actions { display: flex; gap: .5rem; }
+
+/* ── Empty state ────────────────────────────────────────────────── */
+.empty {
+  text-align: center;
+  padding: 3rem;
+  color: #475569;
+  background: #1e293b;
+  border-radius: 12px;
+}
